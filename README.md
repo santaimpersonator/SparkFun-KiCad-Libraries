@@ -5,7 +5,8 @@ This repository contains the SparkFun KiCad Libraries of commonly used parts. It
 
 ![SparkFun LG290P Breakout 3D](./img/SparkFun_GNSS_LG290P_Breakout_3D.png)
 
-**Note:** The SparkFun KiCad components contain internal part numbers (**PROD_ID-\***) for ease of manufacture for the SparkFun SMD lines. 
+> [!NOTE]
+> The SparkFun KiCad components contain internal part numbers (**PROD_ID-\***) for ease of manufacture for the SparkFun SMD lines. 
 
 ## Theory
 
@@ -34,6 +35,8 @@ We use the following naming conventions to create our 'bubble gum' parts:
 Internally, these libraries use an Environmental Variable named `SPARKFUN_KICAD_LIBRARY` to reference the footprints and 3D models. This is converted into `KICAD9_3RD_PARTY` during the release process. The release zip file Assets contain `KICAD9_3RD_PARTY` paths. At SparkFun, we use the library as-is with the original `SPARKFUN_KICAD_LIBRARY` environmental variable paths. Our open-source KiCad designs will contain those same environmental variable paths. If you want to be able to _edit_ existing SparkFun schematics and board designs directly, rather than just make use of our components, you need to manually install a true copy or clone of the library. See [Download the current libraries as a zip file](#download-the-current-libraries-as-a-zip-file) and [Using Git](#using-git) below.
 
 ### Installing a release via the KiCad PCM
+> [!TIP]
+> Use this installation method, if you only need to simply install and use our KiCAD library.
 
 From the fall of 2025, releases of these libraries are available via the KiCad Plugin and Content Manager (PCM).
 
@@ -41,9 +44,14 @@ From the fall of 2025, releases of these libraries are available via the KiCad P
 
 Open the PCM, select the "Libraries" tab, and type "SparkFun" into the search box. The "Install" button will install the latest release of the libraries.
 
-**Note:** this method assumes you have the KiCad Library nickname prefix set to the default of 'PCM_'. If you have cleared the Library nickname prefix, use the [next option](#installing-a-release-from-zip-file---without-the-pcm_-library-nickname-prefix) to install from zip file.
+> [!NOTE]
+> **Note:** this method assumes you have the KiCad Library nickname prefix set to the default of 'PCM_'. If you have cleared the Library nickname prefix, use the [next option](#installing-a-release-from-zip-file---without-the-pcm_-library-nickname-prefix) to install from zip file.
+
+</details>
 
 ### Installing a release from zip file - without the PCM_ Library nickname prefix
+> [!TIP]
+> Use this installation method, if you would like to install our KiCAD library so that it is compatible with the latest design files that we provide for our products (post-Oct 2025).
 
 In the KiCad Preferences, you will find settings for "Packages and Updates". The "Library nickname prefix" is applied to any libraries installed through the Plugin and Content Manager (PCM).
 
@@ -62,7 +70,15 @@ If you install these libraries though the PCM, the installation assumes the pref
 
 If you are changing the Library prefix to use this installation method, we recommend: clearing the prefix, OK the changes, **close KiCad** and reopen before installing the zip file.
 
+</details>
+
 ### Download the current libraries as a zip file
+> [!TIP]
+> This installation method is primarily intended for internal use for our engineers. However, uses may be interested in this method:
+> - If you would like to contribute to this project
+> - If you want the latest updates without waiting for a release
+> - If you need to open some of our older product design files. This method should be universal is universal for all of our design files
+
 
 Instead of waiting for a release, you can download a copy of the libraries at any time by clicking on the big green `<> Code` button above and selecting the `Download ZIP` option. Or, click on the icon below:
 
@@ -83,6 +99,8 @@ Then likewise in the **Footprint Editor**, select `Preferences \ Manage Footprin
 ![Adding the footprints](./img/Add_Footprints.png)
 
 ![Added footprints](./img/Added_Footprints.png)
+
+</details>
 
 ### Using Git
 
