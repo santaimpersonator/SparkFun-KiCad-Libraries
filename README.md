@@ -5,9 +5,11 @@ This repository contains the SparkFun KiCad Libraries of commonly used parts. It
 
 ![SparkFun LG290P Breakout 3D](./img/SparkFun_GNSS_LG290P_Breakout_3D.png)
 
-**Note:** The SparkFun KiCad components contain internal part numbers (**PROD_ID-\***) for ease of manufacture for the SparkFun SMD lines. 
+> [!NOTE]
+> The SparkFun KiCad components contain internal part numbers (**PROD_ID-\***) for ease of manufacture for the SparkFun SMD lines.
 
-## Theory
+Theory
+-------------------
 
 KiCad is very good and has a large number of industry specified symbols and footprints. SparkFun has a large number of unique parts and components created since 2002. Rather than converting all previous [SparkFun Eagle libraries](https://github.com/sparkfun/SparkFun-Eagle-Libraries) to KiCad, we are adding new parts to these libraries as we need them for new projects. This gives us the opportunity to clear out old badness, but opens the door to new badness (ie, incorrect footprints) so reader beware!
 
@@ -17,23 +19,29 @@ Additionally, SparkFun needs to assign various unique manufacturing data (ie, in
 
 ![List of SparkFun capacitors in KiCad](./img/Capacitor-List.png)
 
-We use the following naming conventions to create our 'bubble gum' parts: 
+We use the following naming conventions to create our 'bubble gum' parts:
 
-* [capacity]\_[size]\_[voltage]_[tolerance]
-* [resistance]\_[size]\_[wattage optional]_[tolerance optional]
-* [inductance]\_[size]\_[max current]
-* [led color]\_[size]\_[wavelength optional]
+* <code>[<b>capacity</b>]\_[<b>size</b>]\_[<b>voltage</b>]\_[<b>tolerance</b>]</code>
+* <code>[<b>resistance</b>]\_[<b>size</b>]\_[<b>wattage</b> <i>(optional)</i>]\_[<b>tolerance</b> <i>(optional)</i>]</code>
+* <code>[<b>inductance</b>]\_[<b>size</b>]\_[<b>max current</b>]</code>
+* <code>[<b>led color</b>]\_[<b>size</b>]\_[<b>wavelength</b> <i>(optional)</i>]</code>
 
-## Installing and using these libraries
+
+Installing and using these libraries
+------------------------------------
 
 * [Installing a release via the KiCad PCM](#installing-a-release-via-the-kicad-pcm)
-* [Installing a release from zip file - without the PCM_ Library nickname prefix](#installing-a-release-from-zip-file---without-the-pcm_-library-nickname-prefix)
+* [Installing a release from zip file - without the `PCM_` Library prefix](#installing-a-release-from-zip-file---without-the-pcm_-library-prefix)
+* [Install from GitHub](#install-from-github)
+
 * [Download the current libraries as a zip file](#download-the-current-libraries-as-a-zip-file)
 * [Using Git](#using-git)
 
 Internally, these libraries use an Environmental Variable named `SPARKFUN_KICAD_LIBRARY` to reference the footprints and 3D models. This is converted into `KICAD9_3RD_PARTY` during the release process. The release zip file Assets contain `KICAD9_3RD_PARTY` paths. At SparkFun, we use the library as-is with the original `SPARKFUN_KICAD_LIBRARY` environmental variable paths. Our open-source KiCad designs will contain those same environmental variable paths. If you want to be able to _edit_ existing SparkFun schematics and board designs directly, rather than just make use of our components, you need to manually install a true copy or clone of the library. See [Download the current libraries as a zip file](#download-the-current-libraries-as-a-zip-file) and [Using Git](#using-git) below.
 
 ### Installing a release via the KiCad PCM
+> [!TIP]
+> Use this installation method, if you only need to simply install and use our KiCAD library for your own purposes.
 
 From the fall of 2025, releases of these libraries are available via the KiCad Plugin and Content Manager (PCM).
 
@@ -41,9 +49,14 @@ From the fall of 2025, releases of these libraries are available via the KiCad P
 
 Open the PCM, select the "Libraries" tab, and type "SparkFun" into the search box. The "Install" button will install the latest release of the libraries.
 
-**Note:** this method assumes you have the KiCad Library nickname prefix set to the default of 'PCM_'. If you have cleared the Library nickname prefix, use the [next option](#installing-a-release-from-zip-file---without-the-pcm_-library-nickname-prefix) to install from zip file.
+> [!NOTE]
+> **Note:** this method assumes you have the KiCad Library nickname prefix set to the default of 'PCM_'. If you have cleared the Library nickname prefix, use the [next option](#installing-a-release-from-zip-file---without-the-pcm_-library-nickname-prefix) to install from zip file.
 
-### Installing a release from zip file - without the PCM_ Library nickname prefix
+</details>
+
+### Installing a release from zip file - without the `PCM_` Library prefix
+> [!TIP]
+> Use this installation method, if you would like to install our KiCad library so that it is compatible with the latest design files that we provide for our products (post-Oct 2025).
 
 In the KiCad Preferences, you will find settings for "Packages and Updates". The "Library nickname prefix" is applied to any libraries installed through the Plugin and Content Manager (PCM).
 
@@ -62,13 +75,56 @@ If you install these libraries though the PCM, the installation assumes the pref
 
 If you are changing the Library prefix to use this installation method, we recommend: clearing the prefix, OK the changes, **close KiCad** and reopen before installing the zip file.
 
-### Download the current libraries as a zip file
+</details>
+
+### Install from GitHub
+> [!TIP]
+> This installation method is primarily intended for internal use for our engineers. However, uses may be interested in this method:
+> - If you would like to contribute to this project
+> - If you want the latest updates without waiting for a release
+> - If you need to open some of our older product design files. This method should be universal for all of our design files
+
+
+<details open>
+
+<summary>Cloning from GitHub</summary>
+
+#### Clone Using Git
+
+If you're familiar with GitHub and Git / [GitHub Desktop](https://desktop.github.com/download/), you can stay completely up to date by cloning this repo.
+
+Again, add the Symbols and Footprints Paths as described in the [previous section](#download-the-current-libraries-as-a-zip-file).
+
+If you use the "Watch All Activity" option above, you will be notified each time we Push changes in the libraries. You can then Pull the changes to stay completely up to date. (It's what we do at SparkFun!)
+
+</details>
+
+
+<details open>
+
+<summary>Tips for collapsed sections</summary>
+
+#### Download the current libraries as a zip file
+> [!TIP]
+> This installation method is primarily intended for internal use for our engineers. However, uses may be interested in this method:
+> - If you want the latest updates without waiting for a release
+> - If you need to open some of our older product design files. This method should be universal is universal for all of our design files
+
 
 Instead of waiting for a release, you can download a copy of the libraries at any time by clicking on the big green `<> Code` button above and selecting the `Download ZIP` option. Or, click on the icon below:
 
 [![Download ZIP](./img/Download_Zip.png)](https://github.com/sparkfun/SparkFun-KiCad-Libraries/archive/refs/heads/main.zip "Download ZIP")
 
-Unzip the file somewhere convenient, usually in `Documents`. If needed, change the folder name from `SparkFun-KiCad-Libraries-main` to `SparkFun-KiCad-Libraries`. Open the KiCad **Symbol Editor** and select `Preferences \ Configure Paths`. Add a new Environmental Variable called `SPARKFUN_KICAD_LIBRARY` and set the Path to the `SparkFun-KiCad-Libraries` folder :
+Unzip the file somewhere convenient, usually in `Documents`. If needed, change the folder name from `SparkFun-KiCad-Libraries-main` to `SparkFun-KiCad-Libraries`. 
+
+</details>
+
+
+
+
+
+
+Open the KiCad **Symbol Editor** and select `Preferences \ Configure Paths`. Add a new Environmental Variable called `SPARKFUN_KICAD_LIBRARY` and set the Path to the `SparkFun-KiCad-Libraries` folder :
 
 ![SPARKFUN_KICAD_LIBRARY Environment Variable](./img/Environment_Variable.png)
 
@@ -84,7 +140,14 @@ Then likewise in the **Footprint Editor**, select `Preferences \ Manage Footprin
 
 ![Added footprints](./img/Added_Footprints.png)
 
+</details>
+
 ### Using Git
+> [!TIP]
+> This installation method is primarily intended for internal use for our engineers. However, uses may be interested in this method:
+> - If you would like to contribute to this project
+> - If you want the latest updates without waiting for a release
+> - If you need to open some of our older product design files. This method should be universal for all of our design files
 
 If you're familiar with GitHub and Git / [GitHub Desktop](https://desktop.github.com/download/), you can stay completely up to date by cloning this repo.
 
@@ -102,12 +165,18 @@ Contents
 License
 -------------------
 
-This libraries are released under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license. 
-**You are welcome to use these libraries for commercial purposes.**
-For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. 
-We want bragging rights that we helped (in a very small part) to create your 8th world wonder. 
-We would like the opportunity to feature your device on our homepage.
+These libraries are released under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license; please, review the [`LICENSE.md`](./LICENSE.md) file for more information. If you have any questions or concerns about licensing, contact us on our [SparkFun forums](https://community.sparkfun.com/).
 
-Please consider contributing back to these libraries or others to help the open-source hardware community continue to thrive and grow! 
+> [!NOTE]
+> **You are welcome to use these libraries for commercial purposes.**
+> For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold.
+> - We want bragging rights that we helped (in a very small part) to create your 8th world wonder.
+> - We would like the opportunity to feature your device on our homepage.
+
+Please consider contributing back to these libraries or others to help the open-source hardware community continue to thrive and grow!
+
+Distributed as-is; no warranty is given.
 
 - Your friends at SparkFun
+
+
